@@ -1,0 +1,29 @@
+﻿########################################################################
+# PPS(PPS.tv)
+########################################################################
+# PPS(PPS.tv)
+# Version 1.1.1 2013-03-26 (cmeng)
+# - Update search function
+
+# Version 1.1.0 2013-03-24 (cmeng)
+# - Complete script rewrite to support filtering
+# - User defined sort order in addon settings
+# - Enhance menu display inforomation
+# - Add thumb images display
+# - Rename PPS网络电视(PPS客户端) to PPS影音(PPS.tv) per site provider
+
+# Version 1.0.2 2012-08-04 (cmeng)
+# - add sort to menu listing (keeping numbering) 
+# - replace ElementTree deprecated function getiterator()
+# - correct script error in (year)-cause items list filtering
+
+# Version 1.0.1 2012-07-28 (cmeng)
+# - change default.py text string to utf-8 for non-Chinese OS display
+# - clean up python syntax error
+# - clean up xbmc deprecated function call
+# - add in chinese keyboard support
+# - change search url querry string
+
+# Version 1.0.0 2012-07-23 (yxnr)
+# - initial release
+########################################################################
