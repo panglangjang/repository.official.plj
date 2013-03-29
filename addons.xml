@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon
+  id="plugin.video.plj"
+  version="0.0.1"
+  name="Official PLJ Addon"
+  provider-name="panglangjang">
+  <requires>
+        <import addon="xbmc.python" version="2.0"/>
+		<import addon="script.module.xbmcswift2" version="1.3.1" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Official PLJ Addon</summary>
+    <description>Required to run PLJ Openelec Media Center</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon 	id="repository.official.plj"
+		name="Official PLJ Repository"
+		version="0.0.1"
+		provider-name="ceetoe" >
+
+	<extension 	point="xbmc.addon.repository"
+				name="PLJ Addons Repository" >
+
+		<info compressed="false">https://raw.github.com/panglangjang/repository.official.plj/master/addons.xml</info>
+		<checksum>https://raw.github.com/panglangjang/repository.official.plj/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/panglangjang/repository.official.plj/master/repo/</datadir>
+	</extension>
+
+	<extension point="xbmc.addon.metadata">
+		<summary>Official PLJ Repository</summary>
+		<description>Official Skin, Script, Video Plugins</description>
+		<disclaimer>The video add-ons hosted by my XBMC add-ons repository makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, video add-ons don't warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on the Internet web site where from data is retrieved or otherwise relating to such materials or on any sites linked to this addon. Videos are streamed directly from video-hosting websites that are having full rights to remove such access to video if required.</disclaimer>
+		<platform>all</platform>
+	</extension>
+
+</addon>
+
+  <addon id="script.ace.extrapack" name="Ace extrapack" version="1.0.1" provider-name="malte, Wanilton, MarcosQui">
+	<requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="xbmc.addon" version="12.0.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<language/>
+	  <summary lang="en">Ace extrapack</summary>
+	  <summary lang="pt_BR">Ace extrapack</summary>
+		<description lang="en">Downloads extras from skin Ace</description>
+		<description lang="pt_BR">Pacote extra para a skin Ace</description>
+    <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="script.module.xbmcswift2" name="xbmcswift2" provider-name="Jonathan Beluch (jbel)" version="2.4.0">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+  </requires>
+  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.addon.metadata">
+    <language />
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="skin.aceofspades" version="0.0.1" name="Ace of Spades" provider-name="panglangjang|MarcosQui">
+<requires>
+	<import	addon="xbmc.gui" version="4.0.0"/>
+	<import addon="script.ace.extrapack" version="1.0.1"/>
+	<import addon="script.favourites" version="4.0.4"/>
+	<import addon="script.artwork.downloader" version="12.0.11"/>
+	<import addon="script.randomandlastitems" version="2.0.3"/>
+	<import addon="script.artistslideshow" version="1.4.6"/>
+	<import addon="script.tv.show.next.aired" version="5.0.4"/>
+	<import addon="service.skin.widgets" version="0.0.19"/>
+	<import addon="script.cu.lrclyrics" version="1.0.1"/>
+	<import addon="script.videolanguage" version="0.0.6"/>
+
+
+	<!-- Import Official PLJ addon -->
+	<import addon="plugin.video.plj" version="0.0.1"/>
+
+</requires>
+<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="0.75" debugging="false">
+	<res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
+</extension>
+<extension point="xbmc.addon.metadata">
+	<summary lang="en">Ace, a new skin by MQ</summary>
+	<summary lang="pt_BR">Ace, uma nova skin por MQ</summary>
+	<description lang="en">Ace, a new skin, light, powerful and very customizable. A tiny skin and versatile that you can use since your Tablet until the HTPC.</description>
+	<description lang="en_US">Ace, a new skin, light, powerful and very customizable. A tiny skin and versatile that you can use since your Tablet until the HTPC.</description>
+	<description lang="pt_BR">Ace, uma skin nova, leve, poderosa e muito customizável. Uma skin pequena e versátil que pode ser usada desde seu Tablet até o HTPC.</description>
+	<description lang="el">Ace, ένα νέο κέλυφος, πολύ ελαφρύ, ισχυρό και ιδιαιτέρως προσαρμόσιμο. Ένα μινιμαλιστικό και ευέλικτο κέλυφος που μπορείτε να χρησιμοποιήσετε με το tablet σας και το HTPC σας.</description>
+	<platform>all</platform>
+</extension>
+</addon>
+</addons>
