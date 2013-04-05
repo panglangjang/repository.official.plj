@@ -9,7 +9,7 @@
 	<item id="56"><!-- STREAMS menu item, linked to plj addon -->
 	<label>STREAMS</label>
 	<label2>Access online content</label2>
-	<icon>special://skin/backgrounds/plj.png</icon>
+	<icon>special://skin/backgrounds/icon.png</icon>
 	<onclick>ActivateWindow(video,plugin://plugin.video.plj)</onclick>
 	<visible>True</visible>
 	</item>		

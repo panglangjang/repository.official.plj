@@ -102,4 +102,311 @@
 	<platform>all</platform>
 </extension>
 </addon>
+
+<addon
+  id="skin.confluence.plj"
+  version="0.0.1"
+  name="Confluence (PLJ)"
+  provider-name="Jezz_X, Team XBMC ( v2.1.4 adapted for plj)">
+  <requires>
+    <import addon="xbmc.gui" version="4.0.0"/>
+	<import addon="plugin.video.plj" version="0.0.1"/>
+
+  </requires>
+  <extension
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt"
+    debugging="false"
+    effectslowdown="0.75">
+    <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="af">Confluence oortreksel deur Jezz_X. (XBMC se bestek oortreksel)</summary>
+    <summary lang="ar">غلاف حشد من Jezz_X. (هو الغلاف الافتراضي لـXBMC)</summary>
+    <summary lang="be">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="bg">Облик от Jezz_X. (стандартния за XBMC)</summary>
+    <summary lang="ca">Aparença Confluence, per Jezz_X. (Aparença per defecte de l'XBMC)</summary>
+    <summary lang="cs">Motiv Confluence od Jezz_X. (výchozí motiv XBMC)</summary>
+    <summary lang="da">Confluence skin af Jezz_X. (XBMC's standardskin)</summary>
+    <summary lang="de">Confluence, ein Skin von Jezz_X. (XBMC standard Skin)</summary>
+    <summary lang="el">Το κέλυφος Confluence από τον Jezz_X (προεπιλεγμένο κέλυφος του XBMC).</summary>
+    <summary lang="en">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="es">Confluence skin por Jezz_X. (skin por defecto)</summary>
+    <summary lang="es_AR">Confluence skin por Jezz_X. (skin por defecto de XBMC)</summary>
+    <summary lang="es_MX">Skin confluende por Jezz_X. (skin por defecto de XMC)</summary>
+    <summary lang="et">Confluence rüü autorilt Jezz_X. (XBMC vaikerüü)</summary>
+    <summary lang="fi">Confluence-ulkoasu Jezz_X:ltä. (XBMC:n oletus ulkoasu)</summary>
+    <summary lang="fil">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="fr">Thème Confluence par Jezz_X. (thème par défaut)</summary>
+    <summary lang="gl">Pel Confluence por Jezz_Z. (Pel predeterminada de XBMC)</summary>
+    <summary lang="he">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="hr">Confluence izgled autora Jezz_X. (XBMC podrazumijevani izgled)</summary>
+    <summary lang="hu">Confluence felszín. Készítő: Jezz_X (XBMC alapértelmezett felszín)</summary>
+    <summary lang="is">Confluence eftir Jezz_X. (Sjálfgefið útlit XBMC)</summary>
+    <summary lang="it">Skin Confluence da Jezz_X. (skin predefinita di XBMC)</summary>
+    <summary lang="ja">Confluence スキン by Jezz_X. (XBMC デフォルトスキン)</summary>
+    <summary lang="km">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="ko">Confluence 스킨 Jezz_X 만듦 (XBMC 기본 스킨)</summary>
+    <summary lang="lt">Teminė išvaizda Confluence sukurta Jezz_X.(XBMC numatytoji teminė išvaizda)</summary>
+    <summary lang="mk">Confluence skin by Jezz_X. (XBMC's default skin)</summary>
+    <summary lang="nl">Confluence skin door Jezz_X</summary>
+    <summary lang="no">Confluence tema av Jezz_X. (XBMC standardtema)</summary>
+    <summary lang="pl">Confluence autorstwa Jezz_X</summary>
+    <summary lang="pt">Tema Confluence desenvolvido por Jezz_X. (Tema padrão do XBMC)</summary>
+    <summary lang="pt_BR">Skin Confluence por Jezz_X. (Skin padrão do XBMC)</summary>
+    <summary lang="rm">Confluence skin da Jezz_x. (XBMC's default skin)</summary>
+    <summary lang="ro">Costum Confluence de Jezz_X. (costum implicit)</summary>
+    <summary lang="ru">Обложка Confluence (стандартная обложка XBMC). Автор: Jezz_X.</summary>
+    <summary lang="sk">Confluence skin od Jezz_X. (predvolený skin XBMC)</summary>
+    <summary lang="sl">Preobleka Confluence avtorja Jezz_X. (Privzeta preobleka za XBMC)</summary>
+    <summary lang="sq">Maska Confluence nga Jazz_X (maska kryesore së XBMC)</summary>
+    <summary lang="sv">Confluence, ett skal av Jezz_X. (XBMC standardskal)</summary>
+    <summary lang="ta_IN">கான்புலுஎன்சு தோலுடை - தயாரிப்பு  : Jezz_X (XBMC உடைய கொடாநிலை தோலுடை)</summary>
+    <summary lang="th">ชุดตกแต่ง Confluence โดย  Jezz_X (สกินเริ่มต้นของ XBMC)</summary>
+    <summary lang="tr">Jezz_X tarafından Confluence dış görünümü. (XBMC varsayılan dış görünüm)</summary>
+    <summary lang="uk">Обкладинка Confluence (стандартна обкладинка XBMC). Автор: Jezz_X.</summary>
+    <summary lang="vi">Confluence skin bởi Jezz_X. (Skin mặc định của XBMC)</summary>
+    <summary lang="zh">Jezz_X开发的Confluence皮肤</summary>
+    <summary lang="zh_TW">Jezz_X 製作的佈景主題（XBMC的預設佈景主題）</summary>
+    <description lang="af">Confluence is die bestek oortreksel vir XBMC 9.11 en op. Dit is 'n kombinasie van konsepte van 'n klomp gewilde oortreksels, en 'n poging om hulle goeie idees te omvat en te integreer in 'n oortreksel wat maklik behoort te wees vir eerste keer XBMC gebruikers om te verstaan en te gebruik.</description>
+    <description lang="ar">حشد هو الغلاف الافتراضي لـXBMC 9.11 و ما فوق. إنه مزيج من مفاهيم من أغلفة شعبية, و يحاول ضم و مزج إفكارهم الجيدة في غلاف يسهل فهمه و استخدامه لمستخدم XBMC الجديد.</description>
+    <description lang="be">Confluence is the default skin for XBMC 9.11 and above. It is a combination of concepts from many popular skins, and attempts to embrace and integrate their good ideas into a skin that should be easy for first time XBMC users to understand and use.</description>
+    <description lang="bg">Confluence е стандартният облик на XBMC 9.11 и по-новите версии. Представлява смесица от концепциите на много от популярните облици. Целта е да се интегрират тези добри идеи в подходящ и удобен вид за хора, които се сблъскват за първи път с XBMC.</description>
+    <description lang="ca">Confluence és l'aparença per defecte de l'XBMC 9.11 i superior. És una combinació de conceptes de moltes aparences populars, i intenta adoptar i integrar les seves bones idees en una aparença que sigui senzilla d'entendre i utilitzar per els nous usuaris d'XBMC.</description>
+    <description lang="cs">Confluence je výchozí vzhled pro XBMC 9.11 a novější. Jedná se o kombinaci konceptů z mnoha jiných populárních vzhledů, která se pokouší uchopit a integrovat jejich dobré nápady do vzhledu, který by měl být pro nového uživatele XBMC jednoduchý na pochopení a používání.</description>
+    <description lang="da">Confluence er standardskin'et til XBMC 9.11 og senere versioner. Det er en kombination af koncepter fra mange populære skins, og det forsøger at omfavne og integrere de gode ideer i et skin, der er let for førstegangsbrugere af XBMC at forstå og bruge.</description>
+    <description lang="de">Confluence ist der standard Skin für XBMC 9.11 und später. Er ist eine Kombination mehrer unterschiedlicher Skin-Konzepte und versucht dabei die besten Ideen zu kombinieren, um einen einfachen Einstieg für neue XBMC-Nutzer zu ermöglichen.</description>
+    <description lang="el">Το Confluence είναι το προεπιλεγμένο κέλυφος για τις εκδόσεις XBMC 9.11 και άνω. Είναι ένας συνδυασμός από πολλά δημοφιλή κελύφη, και επιχειρεί να συμπεριλάβει τις καλύτερες ιδέες τους σε ένα κέλυφος το οποίο είναι εύκολο σε αρχάριους χρήστες του XBMC να κατανοήσουν και χρησιμοποιήσουν.</description>
+    <description lang="en">Confluence is the default skin for XBMC 9.11 and above. It is a combination of concepts from many popular skins, and attempts to embrace and integrate their good ideas into a skin that should be easy for first time XBMC users to understand and use.</description>
+    <description lang="es">Confluence es la skin por defecto de XBMC 9.11 y posteriores. Es una combinación de conceptos de muchas skins populares, e intenta abarcar e integrar lo mejor de ellas en una skin que sea sencilla de entender y utilizar para los nuevos usuarios de XBMC.</description>
+    <description lang="es_AR">Confluence es el skin por defecto de XBMC 9.11 y posteriores. Es una combinación de conceptos de muchos skins populares, e intenta abarcar e integrar lo mejor de ellos en un skin que sea sencillo de entender y utilizar para los nuevos usuarios de XBMC.</description>
+    <description lang="es_MX">Confluence es el skin por defecto para XBMC 9.11 en adelante. Es una combinación de conceptos de varias skins populares, e intenta adoptar e integrar sus buenas ideas en un skin que debería ser fá de entender y usar para quienes usen XBMC por primera vez.</description>
+    <description lang="et">Confluence on vaikerüü XBMC-le alates versioonist 9.11. Confluence on paljude populaarsete rüüde kombineerimise tulemus, mis üritab omavahel tööle panna teiste rüüde parimaid lahendusi, et saavutada rüü, mis oleks esmakasutajale ühtmoodi selge ja kerge kasutada.</description>
+    <description lang="fi">Confluence on oletus ulkoasu XBMC:n versiosta 9.11 lähtien. Se on yhdistelmä useiden suosittujen ulkoasujen konsepteista, ja yritys omaksua ja integroida heidän hyvät ideat ulkoasuun, jonka pitäisi olla helppokäyttöinen ja -tajuinen kaikille XBMC:n käyttäjille.</description>
+    <description lang="fil">Ang Confluence ay ang default skin ng XBMC 9.11 at pataas. Ito ay kombinasyon ng mga konsepto at pagsubok paghaluin ang mga mahusay na ideya mula sa maraming popular na skins para ito ay maging madali sa mga unang beses gumamit ng XBMC.</description>
+    <description lang="fr">Confluence est le thème par défaut à partir d'XBMC 9.11. Reprenant les concepts issus de plusieurs thèmes populaires, il est une tentative d'inclusion et d'intégration des meilleures idées afin d'en rendre la compréhension et l'utilisation faciles y compris par des débutants.</description>
+    <description lang="gl">Confluence é a pel predeterminada para XBMC 9.11 e posteriores. É unha combinación de conceptos de algunhas peles populares, e tenta abranguer e integrar  as súas mellores ideas nunha pel que sexa fácil de entender e utilizar para as usuarias que utilizan por primeira vez XBMC.</description>
+    <description lang="he">Confluence הוא סקין ברירת המחדל של XBMC 9.11 ומעלה. זהו צירוף של קונספטים מסקינים פופולריים רבים, וניסיונות לאמץ ולסכם את הרעיונות הטובים שלהם לתוך סקין שיהיה פשוט להבנה ולשימוש עבור משתמשי XBMC חדשים.</description>
+    <description lang="hr">Confluence je podrazumijevani izgled od verzije XBMC 9.11 naviše. To je mješavina ideja i zamisli iz drugih popularnih izgleda, pokušaj da se objedine njihove dobre osobine u izgledu lak za uporabu i razumijevanje od novih XMBC korisnika.</description>
+    <description lang="hu">A Confluence az alapértelmezett felszín az XBMC-hez a 9.11-es verziótól kezdődően. Merít sok sok népszerű felszín elképzeléséből, megpróbálva vegyíteni a jó ötleteket úgy, hogy az könnyen kezelhető legyen az XBMC-vel először találkozóknak is.</description>
+    <description lang="is">Confluence er sjálfgefið útlit XBMC 9.11 og nýrra. Það er samsetning hugmynda frá mörgum vinsælum útlitum og er tilraun til að fanga og innlima þær góðu hugmyndir í útlit þar sem hugmyndin er að skuli vera einfalt fyrir fyrir nýja XBMC notendur að skilja og nota</description>
+    <description lang="it">Confluence è la skin predefinita di XBMC dalla versione 9.11 in poi. E' una combinazione di elementi provenienti da altre skin popolari e cerca di integrare e coinvolgere tutte le loro grandi idee in una skin facile da usare e comprendere per l'utente inesperto di XBMC.</description>
+    <description lang="ja">Confluence は XBMC 9.11 およびそれ以上のバージョンで標準のスキンです。さまざまな人気のスキンのコンセプトを組み合わせ、ユーザが初めて XBMC に触れる際に便利に使えるようにしてあります。</description>
+    <description lang="km">Confluence គឺ ជាស្គីនចំបងរបស់ XBMC 9.11 and about. It is a combination of concepts from many popular skins, and attempts to embrace and integrate their good ideas into a skin that should be easy for first time XBMC users to understand and use.</description>
+    <description lang="ko">Confluence 는 XBMC 9.11 이상의 기본 스킨입니다. 많은 인기 스킨의 컨셉과 좋은 아이디어를 모아서 하나의 스킨으로 만들었으며 초보자도 사용하기 쉽습니다.</description>
+    <description lang="lt">Confluence yra numatytoji teminė išvaizda pradedant XBMC 9.11. Tai daugelio populiarių teminų išvaizdų derinys. Bandymas priimti ir integruoti vartotojų idėjas į teminę išvaizdą katra turėtų būti lengvai suprantama  pirmą kartą naudojantiems XBMC</description>
+    <description lang="mk">Confluence е подразбирачки изглед за XBMC 9.11 па нагоре. Тој е комбинација на концепти од повеќе популарни изгледи, и настојува да ги обедини и истакне нивните добри идеи во еден изглед разбирлив за корисници почетници</description>
+    <description lang="nl">Confluence is de standaard skin voor XBMC 9.11 en hoger. Het combineert de concepten van andere populaire skins, waarbij het tracht hun goede ideëen te integreren in een skin die gemakkelijk in gebruik is.</description>
+    <description lang="no">Confluence er standard tema for XBMC 9.11 og oppover. Det er en kombinasjon av konseptene fra mange populære tema, og prøver å omfavne og integrere de gode idéene i et tema som bør være lett å forstå og benytte for nye XBMC-brukere.</description>
+    <description lang="pl">Confluence jest domyślną skórą dla XBMC 9.11 i nowszych. To kombinacja wielu popularnych pomysłów i próba zawarcia tego co w nich najlepsze w skórze, która będzie łatwa do opanowania dla początkującego użytkownika.</description>
+    <description lang="pt">O tema Confluence é o tema padrão do XBMC 9.11 e superior. É uma mistura de conceitos de muitos temas populares e tenta integrar as boas ideias destes num tema que deve ser fácil de entender e manusear para novos utilizadores do XBMC.</description>
+    <description lang="pt_BR">Confluence é a skin padrão do XBMC 9.11 e acima. É uma combinação de conceitos das mais populares skins, visando abraçar e integrar as boas ideias em uma skin  que seja fácil de entender e usar, destinada  aos usuários iniciantes do XBMC. </description>
+    <description lang="ro">Confluence este costumul implicit pentru XBMC 9.11 și versiunile ulterioare. Este o combinație de concepte împrumutate de la mai multe costume populare, care încearcă să îmbrățișeze și să integreze ideile lor bune într-un costum care să fie ușor de înțeles și folosit de către utilizatorii XBMC începători.</description>
+    <description lang="ru">Confluence — это стандартная обложка XBMC, начиная с версии 9.11. Она представляет собой сочетание концепций, взятых из многих популярных обложек, в попытке интегрировать их удачные идеи в обложке, которая была простой для использования и понимания новыми пользователями XBMC.</description>
+    <description lang="sk">Confluence je predvolený pre XBMC 9.11 a vyššie. Je kombináciou konceptov z mnoho populárnych skinov a pokusom integrovať ich dobré nápady do skinu, ktorý by bol ľahko zrozumiteľný a použiteľný pre nových používateľov XBMC.</description>
+    <description lang="sl">Confluence je privzeta preobleka za XBMC 9.11 in novejše. Je kombinacija konceptov mnogih priljubljenih preoblek in poskuša zaobjeti in integrirati njihove dobre ideje v preobleko, ki bi bila preprosta za uporabo in razumevanje tudi novim uporabnikom XBMC.</description>
+    <description lang="sq">Confluence është maska kryesore për XBMC 9.11 dhe verzionet më të lartë. Është nje kombinim nga shumë maska e popullarizuar dhe përpjeket për të përqafuar dhe integruar idetë më të mira në një maskë që të jetë sa më lehtë në përdorim dhe kuptim për përdoruasit duke e përdorur XBMC për herë të parë.</description>
+    <description lang="sv">Confluence är standardskal för XBMC 9.11 och senare. Det är en kombination av koncept från många populära skal i ett försök att använda och integrera flera goda idéer till ett skal som är enkelt för användare som precis har börjat använda XBMC att förstå och använda.</description>
+    <description lang="ta_IN">Confluence தான் XBMC 9.11 க்கு இயல்புநிலை அலங்காரம். இது பல அலங்காரங்களின் தொகுப்பு என்று கூறலாம். இதன் மூலம் பல்வேறு அலங்காரதிலுள்ள நல்ல செயல்பாடுகளை ஒன்று செர்துள்ளபட்டுளது. முதல் முறையாக XBMC பயன்படுத்துதல் எளிமையாக இருக்கும்.</description>
+    <description lang="th">Confluenceเป็นสกินเริ่มต้นสำหรับ XBMC 9.11 หรือสูงกว่า มันเป็นส่วนผสมของแนวคิดจากสกินที่ได้รับความนิยมและพยายามที่จะยอมรับและบูรณาการส่วนที่ดีของมันเข้าไปในสกิน ซึ่งน่าจะง่ายสำหรับผู้ใช้ XBMCใหม่ ที่จะเข้าใจและใช้งานได้ดี</description>
+    <description lang="tr">Confluence XBMC 9.11 ve yukarısı için varsayılan dış görünümdür. Birçok popüler dış görünümün kavramlarını bir araya getirip ilk kez XBMC kullananlar için anlaşılması ve kullanımı kolaydır.</description>
+    <description lang="uk">Confluence — це стандартна обкладинка XBMC, починаючи з версії 9.11. Концепції багатьох популярних обкладинок поєднано у спробі використати та інтегрувати їхні вдалі ідеї в обкладинці, що стала б зрозумілою та простою в застосуванні для нових користувачів XBMC.</description>
+    <description lang="vi">Confluence là skin mặc định dành cho XBMC 9.11 và mới hơn. Nó là sự kết hợp ý tưởng từ nhiều skin nổi tiếng, và  những nỗ lực tích hợp các ý tưởng tuyệt vời vào một skin mà có thể giúp người dùng cảm thấy thuận tiện và dễ dàng sử dụng ngay từ lần đầu tiên.</description>
+    <description lang="zh">在XBMC 9.11之后的版本中Confluence是默认皮肤。它集合了许多流行皮肤的创意，力求把这些优点融合到一个皮肤中，使得首次使用XBMC的用户能更容易上手。</description>
+    <description lang="zh_TW">Confluence 是從 XBMC 9.11 開始預設的佈景主題。它結合了許多受歡迎的佈景主題的概念，且試圖包含並整合它們的優點，使第一次使用 XBMC 的使用者可以簡單地上手。</description>
+    <disclaimer lang="af">Confluence is die bestek oortreksel vir XBMC, verwydering mag probleme veroorsaak</disclaimer>
+    <disclaimer lang="ar">حشد هو الغلاف الافتراضي لـXBMC, إزلته قد تسبب مشاكل</disclaimer>
+    <disclaimer lang="be">Confluence is the default skin for XBMC, removing it may cause issues</disclaimer>
+    <disclaimer lang="bg">Confluence е стандартният облик на XBMC. Премахването му може да предизвика проблеми</disclaimer>
+    <disclaimer lang="ca">Confluence és l'aparença per defecte de l'XBMC, la seva eliminació pot causar problemes.</disclaimer>
+    <disclaimer lang="cs">Confluence je výchozím vzhledem XBMC, jeho odstranění může způsobit problémy</disclaimer>
+    <disclaimer lang="da">Confluence er standardskin'et til XBMC. Fjernes det, kan der opstå problemer</disclaimer>
+    <disclaimer lang="de">Confluence ist der standard Skin für XBMC. Die Deinstallation kann zu unerwünschten Nebeneffekten führen.</disclaimer>
+    <disclaimer lang="el">Το Confluence είναι το προεπιλεγμένο κέλυφος για το XBMC, η αφαίρεσή του μπορεί να δημιουργήσει προβλήματα</disclaimer>
+    <disclaimer lang="en">Confluence is the default skin for XBMC, removing it may cause issues</disclaimer>
+    <disclaimer lang="es">Confluence es la skin por defecto de XBMC. Borrarla puede causar problemas</disclaimer>
+    <disclaimer lang="es_AR">Confluence es el skin por defecto de XBMC. Borrarlo puede causar problemas</disclaimer>
+    <disclaimer lang="es_MX">Confluence es el skin por defecto para XBMC, removerlo podría causar problemas</disclaimer>
+    <disclaimer lang="et">Confluence on XBMC vaikerüü. Selle eemaldamine võib põhjustada ootamatusi.</disclaimer>
+    <disclaimer lang="fi">Confluence on XBMC:n oletus ulkoasu, sen poistaminen saattaa aiheuttaa ongelmia</disclaimer>
+    <disclaimer lang="fil">Ang Confluence ay ang default skin ng XBMC. Ang pagtanggal nito ay maaring magdulot ng problema</disclaimer>
+    <disclaimer lang="fr">Confluence est le thème par défaut de XBMC, le supprimer peut créer des problèmes</disclaimer>
+    <disclaimer lang="gl">Confluence é a pel predeterminada para XBMC e eliminala pode causas problemas.</disclaimer>
+    <disclaimer lang="he">Confluence הוא סקין ברירת המחדל של XBMC, הסרה שלו עלולה לגרום לבעיות.</disclaimer>
+    <disclaimer lang="hr">Confluence je podrazumijevani izgled za XBMC, njegovo odstranjivanje može uzrokovati teškoće.</disclaimer>
+    <disclaimer lang="hu">A Confluence az alapértelmezett XBMC felszín. Eltávolítása problémákat okozhat.</disclaimer>
+    <disclaimer lang="is">Confluence er sjálfgefið útlit XBMC, það getur orsakað vandamál að fjarlægja það.</disclaimer>
+    <disclaimer lang="it">Confluence è la skin predefinita di XBMC, l'eliminazione potrebbe comportare dei problemi.</disclaimer>
+    <disclaimer lang="ja">Confluence は XBMC のデフォルトスキンですので、これを削除するとうまく動かなくなる可能性があります</disclaimer>
+    <disclaimer lang="ko">Confluence는 XBMC의 기본스킨으로 제거시 문제가 생길수 있습니다.</disclaimer>
+    <disclaimer lang="lt">Confluence yra numatytoji XBMC teminė išvaizda, ją panaikinus ar pakeitus gali kilti problemų</disclaimer>
+    <disclaimer lang="mk">Confluence е подразбирачка маска, бришењето може да предизвика пречки</disclaimer>
+    <disclaimer lang="nl">Confluence is de standaard XMBC skin, het verwijderen van Confluence kan leiden tot problemen.</disclaimer>
+    <disclaimer lang="no">Confluence er standard tema for XBMC, å fjerne det kan skape problemer</disclaimer>
+    <disclaimer lang="pl">Confluence jest domyślną skórą XBMC. Jej usunięcie może powodować problemy.</disclaimer>
+    <disclaimer lang="pt">O tema Confluence é o tema padrão do XBMC. Removê-lo pode causar problemas.</disclaimer>
+    <disclaimer lang="pt_BR">Confluence é a skin padrão do XBMC, removê-la pode lhe causar problemas.</disclaimer>
+    <disclaimer lang="ro">Confluence este costumul implicit pentru XBMC, dacă îl eliminați pot apărea probleme!</disclaimer>
+    <disclaimer lang="ru">Confluence — это стандартная обложка XBMC, и ее удаление может привести к возникновению проблем</disclaimer>
+    <disclaimer lang="sk">Confluence je predvolený skin pre XBMC, jeho odstránenie môže spôsobiť problémy</disclaimer>
+    <disclaimer lang="sl">Confluence je privzeta preobleka za XBMC, njena odstranitev lahko povzroči težave</disclaimer>
+    <disclaimer lang="sq">Confluence është maska kryesore së XBMC, fshirja e saj mund të shkaktoj çështje.</disclaimer>
+    <disclaimer lang="sv">Confluence är standardskal för XBMC, att ta bort detta skal kan skapa problem.</disclaimer>
+    <disclaimer lang="ta_IN">Confluence தான் XBMC யின் இயல்புநிலை அலங்காரம், அதை நீக்குவதால் சிக்கல்கள் ஏற்படலாம்</disclaimer>
+    <disclaimer lang="th">Confluence เป็นสกินเริ่มต้นสำหรับ XBMC การลบมัน อาจทำให้เกิดปัญหา</disclaimer>
+    <disclaimer lang="tr">Confluence XBMC için varsayılan dış görünümdür, kaldırmak sorunlara yol açabilir</disclaimer>
+    <disclaimer lang="uk">Confluence — основна обкладинка XBMC, і її видалення може призвести до проблем</disclaimer>
+    <disclaimer lang="vi">Confluence là skin mặc định cho XBMC, việc gỡ nó ra có thể làm phát sinh lỗi</disclaimer>
+    <disclaimer lang="zh">Confluence是XMBC的默认皮肤，删除它可能导致故障。</disclaimer>
+    <disclaimer lang="zh_TW">Confluence 是 XMBC 預設的佈景主題，移除它可能會造成問題</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon
+  id="skin.re-touched.plj"
+  version="0.0.1"
+  name="re-Touched (PLJ)"
+  provider-name="Jezz_X (: v2.0.0 adapted for plj">
+  <requires>
+    <import addon="xbmc.gui" version="4.0.0"/>
+	<import addon="plugin.video.plj" version="0.0.1"/>
+  </requires>
+  <extension
+    point="xbmc.gui.skin"
+    defaultthemename="Textures.xbt"
+    debugging="false">
+    <res width="1280" height="960" aspect="4:3" default="true" folder="4x3Hirez" />
+    <res width="1706" height="960" aspect="16:9" folder="16x9" />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="af">Touched omslag deur Jezz_X ontwerp om op raak skerm toestelle te gebruik</summary>
+    <summary lang="ar">جلد ملموس من  Jezz_X صمم ليستخدم على أجهزة شاشات اللمس</summary>
+    <summary lang="be">Touched skin by Jezz_X designed to be used on touch screen devices</summary>
+    <summary lang="bg">Облик от Jezz_X за устройства със сензорен екран</summary>
+    <summary lang="ca">Pell Touched per Jezz_X dissenyada per fer servir en dispositius de pantalla tàctil</summary>
+    <summary lang="cs">Motiv Touched byl vytvořen Jezz_X pro použití na zařízeních s dotykovou obrazovkou</summary>
+    <summary lang="da">Touched-skin af Jezz_X, designet til at blive brugt på touchscreen-enheder.</summary>
+    <summary lang="de">"Touched"-Skin von Jezz_X erstellt zur Nutzung auf Touch-Screen-Geräten</summary>
+    <summary lang="el">Το κέλυφος Touched από τον Jezz_X, σχεδιασμένο για χρήση σε συσκευές με οθόνη αφής</summary>
+    <summary lang="en">Touched skin by Jezz_X designed to be used on touch screen devices</summary>
+    <summary lang="es">Touched es una skin diseñada por Jezz_X para ser usada en dispositivos táctiles.</summary>
+    <summary lang="es_AR">Touched es un skin diseñado por Jezz_X para ser usado en dispositivos táctiles.</summary>
+    <summary lang="es_MX">Skin Touched por Jezz_X diseñado para uso en dispositivos con pantalla táctil</summary>
+    <summary lang="et">Touched rüü autorilt Jezz_X puutetundlikele seadetele</summary>
+    <summary lang="fi">Touched-ulkoasun tehnyt Jezz_X, suunniteltu käytettäväksi kosketusnäytöllisissä laitteissa</summary>
+    <summary lang="fr">Thème Touched de Jezz_x conçu pour être utilisé sur les périphériques à écran tactile</summary>
+    <summary lang="gl">Pel Touched por Jezz_X deseñada para empregar en dispositivos táctiles</summary>
+    <summary lang="he">סקין Touched עוצב ע"י Jezz_X עבור מכשירי מסך מגע</summary>
+    <summary lang="hr">Touched skin od Jezz_X-a je dizajnirana da bi bila korištena na uređajima sa touch monitorima</summary>
+    <summary lang="hu">A Touched felszínt Jezz_X tervezte, az érintőképernyős eszközökhöz.</summary>
+    <summary lang="it">Skin Touched di Jezz_X ideata per essere usata su periferiche touch screen</summary>
+    <summary lang="ja">Touched スキン by Jezz_X（タッチスクリーン端末向け）</summary>
+    <summary lang="ko">Jezz_X가 만든 Touched 스킨은 터치 스크린 장치에서 사용하도록 디자인 되었습니다.</summary>
+    <summary lang="lt">Lietimui jautrus šablonas sukūrtas  Jezz_X skirtas naudoti kompiuteriui plančetei su sensoriniu ekranu</summary>
+    <summary lang="mk">Touched маска од  Jezz_X дизајнирана за користење со екрани на допир</summary>
+    <summary lang="nl">Touched skin door Jezz_X ontworpen voor aanraakscherm apparaten</summary>
+    <summary lang="no">Touched skallet av Jezz_X er designet for bruk på trykkfølsomme enheter</summary>
+    <summary lang="pl">Skórka wykonana przez Jezz_X, przeznaczona dla urządzeń posiadających ekran dotykowy</summary>
+    <summary lang="pt">Tema Touched de Jezz_X, preparada para o uso em dispositivos com ecrã táctil.</summary>
+    <summary lang="pt_BR">Skin Touched por Jezz_X concebida para ser usada em dispositivos com telas sensíveis ao toque</summary>
+    <summary lang="ro">Skinul Touched realizat de Jezz_X pentru a fi folosit pe dispozitivele cu ecran de tip touch</summary>
+    <summary lang="ru">Сенсорная обложка  от Jezz_X предназначена для использования на устройствах с сенсорным экраном</summary>
+    <summary lang="se">Touched skin av Jezz_X utformat för att användas på pekskärmsenheter</summary>
+    <summary lang="sk">Touched skin od Jezz_X navrhnutý pre použitie na dotykových displejoch</summary>
+    <summary lang="sl">Preobleka Touched avtorja Jezz_X je namenjena za uporabo na napravah z zaslonom na dotik</summary>
+    <summary lang="sq">Maska 'Touched' nga Jezz_X, dizenjuar për tu përdorur me pajisjet me ekran me prekje</summary>
+    <summary lang="sv">Touched skal av Jezz_X designat att användas på pekskärmsenheter</summary>
+    <summary lang="th">หน้าตา Touched โดย Jezz_X ได้ถูกออกแบบมาเพื่อใช้กับอุปกรณ์หน้าจอสัมผ้ส</summary>
+    <summary lang="uk">Обкладинка Touched, створена Jezz_X для пристроїв зі сенсорним екраном.</summary>
+    <summary lang="vi">Bộ skin Touched bởi Jezz_X được thiết kế để sử dụng trên các thiết bị sử dụng màn hình cảm ứng</summary>
+    <summary lang="zh">由Jezz_X设计用于触屏设备的Touched皮肤</summary>
+    <summary lang="zh_TW">Touched 是由 Jezz_X 所設計用於觸控螢幕裝置的佈景主題</summary>
+    <description lang="af">Omslag van die grond af op ontwerp om op raak skerm toestelle soos die iPad te gebruik</description>
+    <description lang="ar">جلد صمم بالكامل ليستخدم على أجهزة شاشات اللمس مثل الـ iPad</description>
+    <description lang="be">Skin designed from the ground up to be used on touch screen devices like the iPad</description>
+    <description lang="bg">Обликът е разработен от нулата специално за употреба на устройства със сензорен екран</description>
+    <description lang="ca">Pell dissenyada de bell nou per fer-se servir en dispositius de pantalla tàctil com l'iPad</description>
+    <description lang="cs">Motiv vytvořený od základu pro použití na zařízeních s dotykovou obrazovkou jako iPad</description>
+    <description lang="da">Skinnet er designet fra bunden til at blive brugt på touchscreen-enheder såsom iPad'en.</description>
+    <description lang="de">Skin wurde von Grund auf neu erstellt zur Nutzung auf Touch-Screen-Geräten wie iPad</description>
+    <description lang="el">Κέλυφος σχεδιασμένο εξ αρχής για χρήση σε συσκευές με οθόνη αφής όπως το iPad</description>
+    <description lang="en">Skin designed from the ground up to be used on touch screen devices like the iPad</description>
+    <description lang="es">Skin creada desde cero especialmente para dispositivos táctiles, como el iPad.</description>
+    <description lang="es_AR">Skin creado desde cero especialmente para dispositivos táctiles, como el iPad.</description>
+    <description lang="es_MX">Skin diseñado para uso en dispositivos con pantalla táctil como el iPad</description>
+    <description lang="et">Spetsiaalselt puutetundlikele seadetele nagu iPad kasutamiseks disainitud rüü</description>
+    <description lang="fi">Ulkoasu on suunniteltu alustalkaen käytettäväksi kosketusnäytöllisissä laitteissa, kuten iPad</description>
+    <description lang="fr">Thème conçu en essence pour les écrans tactiles tel que l'Ipad</description>
+    <description lang="gl">Pel deseñada de cero para ser empregada en dispositivos táctiles</description>
+    <description lang="he">הסקין עוצב עבור מכשירים עם מסכי מגע כמו האייפד</description>
+    <description lang="hr">Skin dizajniran od početka za korištenje na uređajima sa touch monitorima kako što je iPad</description>
+    <description lang="hu">A felszín elkészítésének célja az, hogy használható legyen az olyan érintőképernyős eszközökön is mint az iPad.</description>
+    <description lang="it">Skin ideata per essere usata su periferiche touch screen come l'iPad</description>
+    <description lang="ja">iPad などのタッチスクリーン端末専用に開発されたスキン</description>
+    <description lang="ko">iPad 같은 터치 스크린 장치에서 사용하도록 완전히 새롭게 디자인한 스킨</description>
+    <description lang="lt">Šablonas sukūrtas naudojimui su sensoriniu ekranu kompiuteriams, plančetėms tokioms kaip iPad, Samsung, Asus ir t.t.</description>
+    <description lang="mk">Маска наново дизајнирана за користење со екрани на допир како што е iPad</description>
+    <description lang="nl">Skin is geheel opnieuw ontworpen om gebruikt te kunnen worden op apparaten met een aanraakscherm zoals de iPad</description>
+    <description lang="no">Dette skallet er designet fra bunn for bruk på trykkfølsomme enheter som iPad</description>
+    <description lang="pl">Skórka została wykonana z przeznaczeniem na urządzenia dotykowe, takie jak iPad </description>
+    <description lang="pt">Tema desenvolvido de raiz para ser usado em ecrãs tácteis de dispositivos como o iPad</description>
+    <description lang="pt_BR">Skin concebida do zero para ser usado em dispositivos com telas sensíveis ao toque, como o iPad</description>
+    <description lang="ro">Skin realizat cu scopul de a fi utilizat pe dispozitive cu ecran de tip touch precum iPad</description>
+    <description lang="ru">Обложка разработана с нуля для использования на устройствах с сенсорным экраном, таких как iPad</description>
+    <description lang="se">Skal utformat från grunden för att användas på pekskärmsenheter som till exempel iPad</description>
+    <description lang="sk">Vzhľad navrhnutý od základu pre použitie na zariadeniach s dotykovým displejom, ako napríklad iPad</description>
+    <description lang="sl">Preobleka je zasnovana popolnoma na novo za naprave z zaslonom na dotik, kot je iPad</description>
+    <description lang="sq">Maskë dizenjuar posaçërisht për tu përdorur me pajisjet me ekran me prekje si iPad’i</description>
+    <description lang="sv">Skal designat från grunden för att användas på pekskärmsenhter som t.ex. iPad</description>
+    <description lang="th">หน้าตาได้ถูกออกแบบขึ้นมาใหม่หมด เพื่อนำไปใช้กับอุปกรณ์หน้าจอสัมผ้ส เหมือน iPad</description>
+    <description lang="uk">Обкладинка розроблена з нуля і призначена для використання на пристроях із сенсорним екраном, наприклад iPad.</description>
+    <description lang="vi">Bộ skin được thiết kế lại từ đầu để sử dụng trên các thiết bị cảm ứng như iPad, Surface</description>
+    <description lang="zh">完全为用于类似iPad的触屏设备而设计的皮肤</description>
+    <description lang="zh_TW">為了如 iPad 等擁有觸控螢幕的裝所重新設計的佈景主題</description>
+    <disclaimer lang="af">Moenie hierdie omslag gebruik as daar nie 'n raak skerm of muis gekoppel is nie, of jy mag navigasie verloor</disclaimer>
+    <disclaimer lang="ar">لا تستخدم هذا الجلد إذا لم يكن لديك شاشة لمس أو الفأرة موصولة أو قد تفقد التوجيه</disclaimer>
+    <disclaimer lang="be">Do not use this skin unless you have either touch screen or a mouse connected or you may lose navigation</disclaimer>
+    <disclaimer lang="bg">НЕ ползвайте облика ако устройството не е снабдено със сензорен екран или мишка, в противен случай ще загубите възможността за навигиране</disclaimer>
+    <disclaimer lang="ca">No utilitzeu aquesta pell excepte si teniu una pantalla tàctil o un ratolí connectat o podeu perdre la navegació</disclaimer>
+    <disclaimer lang="cs">Nepoužívejte tento vzhled pokud nemáte dotykovou obrazovku, nebo připojenou myš. Můžete ztratit kontrolu nad ovládáním aplikace</disclaimer>
+    <disclaimer lang="da">Brug ikke dette skin medmindre du enten har en touchscreen eller mus forbundet, ellers kan du miste navigeringen.</disclaimer>
+    <disclaimer lang="de">Verwenden Sie diese Skin nur wenn Sie einen Touch-Screen haben oder eine Maus angeschlossen ist, andernfalls kann die Steuerung ausfallen</disclaimer>
+    <disclaimer lang="el">Μην χρησιμοποιήσετε αυτό το κέλυφος αν δεν έχετε είτε μία οθόνη αφής ή ένα ποντίκι συνδεδεμένο διότι μπορεί να χάσετε τη δυνατότητα πλοήγησης</disclaimer>
+    <disclaimer lang="en">Do not use this skin unless you have either touch screen or a mouse connected or you may lose navigation</disclaimer>
+    <disclaimer lang="es">No uses esta skin a no ser que tengas un dispositivo táctil o un ratón conectado, puesto que puedes perder la posibilidad de moverte por las opciones.</disclaimer>
+    <disclaimer lang="es_AR">No uses este skin a no ser que tengas un dispositivo táctil o un mouse conectado, ya que puedes perder la posibilidad de moverte por las opciones.</disclaimer>
+    <disclaimer lang="es_MX">No uses éste skin a menos de que tengas una pantalla táctil o un mouse conectado o puedes perder la navegación</disclaimer>
+    <disclaimer lang="et">Ära kasuta seda rüüd, kui sul puudub kas puutetundlik ekraan või ühendatud hiir. Vastasel juhul võid kaotada navigeerimise võimaluse</disclaimer>
+    <disclaimer lang="fi">Älä käytä tätä skiniä ellei sinulla ole kosketusnäyttöä tai hiirtä liitettynä, koska saatat</disclaimer>
+    <disclaimer lang="fr">N'utiliser ce thème qu'avec écran tactile ou souris sous peine d'en perdre le contrôle</disclaimer>
+    <disclaimer lang="gl">Non empregar esta pel a non ser que teña ben un dispositivo táctil ou un rato conectado. Pode perder a navegación.</disclaimer>
+    <disclaimer lang="he">אל תשתמש בסקין זה אם אין ברשותך מסך מגע או עכבר מחובר או שתחווה בעיות ניווט</disclaimer>
+    <disclaimer lang="hr">Ne koristite ovi skin ukoliko nemate touch monitor ili miš spojen, usuprotnom gubite navigaciju</disclaimer>
+    <disclaimer lang="hu">Ha a felszínt érintőképnyő nélkül, vagy egérrel használod, nem fog működni a navigálás</disclaimer>
+    <disclaimer lang="it">Non usare questa skin se non hai un touch screen o un mouse connesso, o potresi perdere la navigazione</disclaimer>
+    <disclaimer lang="ja">タッチスクリーンやマウスが接続されていない端末でこのスキンを使うと、操作出来なくなる可能性があります。</disclaimer>
+    <disclaimer lang="ko">터치 스크린이나 마우스가 없는 상황에서 이 스킨을 사용하지 마십시오. 탐색이 불가능할 수 있습니다.</disclaimer>
+    <disclaimer lang="lt">Šio šablono vartoti negalima, nebent Jūs turite jutiklinį ekraną, arba prijungtą pelę kitaip Jūs galite prarasti naršymą/navigaciją</disclaimer>
+    <disclaimer lang="mk">Не користи маска доколку немас екран на допир или маус, може да ја загубиш навигацијата</disclaimer>
+    <disclaimer lang="nl">Gebruik deze skin niet tenzij u gebruik maakt van een aanraakscherm of muis anders kan je de besturing verliezen</disclaimer>
+    <disclaimer lang="no">Ikke bruk dette skallet med mindre du har en touch skjerm, eller en mus tilkoblet da du kan miste muligheten til å navigere i XBMC</disclaimer>
+    <disclaimer lang="pl">Nie używaj tej skórki jeśli nie masz ekranu dotykowego lub podłączonej myszki, w przecinym razie możesz stracić możliwość nawigacji</disclaimer>
+    <disclaimer lang="pt">Não utilize este tema se não tiver um ecrã táctil ou um rato, pois irá perder opções de navegação.</disclaimer>
+    <disclaimer lang="pt_BR">Não use essa skin a menos que você tenha uma tela sensível ao toque ou um mouse conectado, ou você pode perder a navegação</disclaimer>
+    <disclaimer lang="ro">Nu folosiți acest skin dacă nu aveți un ecran de tip touch sau dacă nu aveți un mouse conectat sau veți pierde navigabilitatea</disclaimer>
+    <disclaimer lang="ru">Не включайте эту обложку, если вы не используете сенсорный экран или мышь, потому что может перестать работать навигация</disclaimer>
+    <disclaimer lang="se">Använd inte detta skal om du inte har endera en pekskärmsenhet eller om mus, annars kan navigeringen sluta fungera</disclaimer>
+    <disclaimer lang="sk">Nepoužívajte tento vzhľad, pokiaľ nemáte dotykovú obrazovku, alebo pripojenú myš, inak môžete stratiť kontrolu nad ovládaním aplikácie</disclaimer>
+    <disclaimer lang="sl">Ne uporabljajte te preobleke, če nimate zaslona na dotik ali povezane miške, ker boste s tem izgubili možnost navigacije</disclaimer>
+    <disclaimer lang="sq">Mos e përdorni këtë maskë nëse nuk keni, ose ekran me prekje, ose maus te lidhur, përndryshe mund të humbni aftësinë për të naviguar</disclaimer>
+    <disclaimer lang="sv">Använd inte detta skal om du inte har endera en pekskärmsenhet eller en mus ansluten, annars kan du tappa bort navigeringen</disclaimer>
+    <disclaimer lang="th">อย่าได้ใช้หน้าตานี้ จนกว่าคุณจะมี หน้าจอสัมผัส หรือ เมาส์ อย่างใดอย่างหนึ่งเชื่อมต่ออยู่ ไม่เช่นนั้นคุณจะสูญเสียการควบคุม</disclaimer>
+    <disclaimer lang="uk">Використовуйте цю обкладинку, лише якщо ваш пристрій обладнано сенсорним екраном або мишею. Інакше ви можете втратити можливість керування.</disclaimer>
+    <disclaimer lang="vi">Không sử dụng skin này trừ khi là bạn đang sử dụng màn hình cảm ứng hoặc sử dụng chuột để tránh trường hợp mất điều khiển</disclaimer>
+    <disclaimer lang="zh">在非触屏且没有鼠标控制的情况下使用此皮肤会造成无法控制设备</disclaimer>
+    <disclaimer lang="zh_TW">除非你有觸控螢幕或滑鼠連接，否則請不要使用這個佈景主題，不然你會無法控制 XBMC。</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
 </addons>
