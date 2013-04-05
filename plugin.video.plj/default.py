@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
     Official PLJ Addon
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,7 +13,19 @@ from xbmcswift2 import actions
 import urllib,urllib2,re,xbmcplugin,xbmcgui
 
 def CATEGORIES():
-        categories = []
+        categories = [
+                ( 'International', [
+                        ( '网络电视(PPS)', 'plugin://plugin.video.ppstream/' )
+                ] ),
+
+                ( 'Local', [
+                        ( '香港看(HKKan)','plugin://plugin.video.hkkan/' ),
+                        ( '迅雷看看(KanKan)', 'plugin//plugin.video.kankan/' ),
+                        ( '音悦台(YingYueTai)','plugin://plugin.video.yingyuetai/' ),
+
+                ] )
+
+                ]
         for category,addons in categories:
                 addDir('- '+category,'',0,'')
                 for name, url in addons:

@@ -539,3 +539,7 @@ msgstr "获取天气信息..."
 msgctxt "#31910"
 msgid "Map & Alerts"
 msgstr "地图 & 警报"
+
+msgctxt "#31911"
+msgid "Streams"
+msgstr "互联网流"

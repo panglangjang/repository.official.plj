@@ -892,6 +892,13 @@
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>
 					</item>
+					<item id="10">
+						<label>31911</label>
+						<onclick>ActivateWindow(Videos,plugin://plugin.video.plj,return)</onclick>
+						<icon>special://skin/backgrounds/icon.png</icon>
+						<thumb>-</thumb>
+						<visible>True</visible>
+					</item>					
 					<item id="4">
 						<label>1</label>
 						<onclick>ActivateWindow(Pictures)</onclick>
