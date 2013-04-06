@@ -41,7 +41,7 @@
 
 <addon
   id="plugin.video.plj"
-  version="0.0.1"
+  version="0.0.2"
   name="Official PLJ Addon"
   provider-name="panglangjang">
   <requires>
@@ -361,7 +361,7 @@ Raadpleeg de lokale wetgeving voordat u deze plugin installeert.</disclaimer>
 
 <addon
   id="skin.confluence.plj"
-  version="0.0.1"
+  version="0.0.2"
   name="Confluence (PLJ)"
   provider-name="Jezz_X, Team XBMC ( v2.1.4 adapted for plj)">
   <requires>

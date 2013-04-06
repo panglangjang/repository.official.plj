@@ -892,13 +892,6 @@
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>
 					</item>
-					<item id="10">
-						<label>31911</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.plj,return)</onclick>
-						<icon>special://skin/backgrounds/icon.png</icon>
-						<thumb>-</thumb>
-						<visible>True</visible>
-					</item>					
 					<item id="4">
 						<label>1</label>
 						<onclick>ActivateWindow(Pictures)</onclick>
@@ -906,13 +899,20 @@
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
 					</item>
-					<item id="12">
+					<item id="9">
+						<label>31911</label>
+						<onclick>ActivateWindow(Videos,plugin://plugin.video.plj,return)</onclick>
+						<icon>-</icon>
+						<thumb>-</thumb>
+						<visible>True</visible>
+					</item>					
+					<!--item id="12">
 						<label>31502</label>
 						<onclick>ActivateWindow(PVR)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
-					</item>
+					</item-->
 					<item id="2">
 						<label>3</label>
 						<onclick condition="StringCompare(Window.Property(VideosDirectLink),True)">ActivateWindow(Videos)</onclick>
