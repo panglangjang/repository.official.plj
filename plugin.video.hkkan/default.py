@@ -1,23 +1,30 @@
-import httplib
-import urllib,urllib2,re,sys
-import cookielib,os,string,cookielib,StringIO,gzip
-import os,time,base64,logging
-from t0mm0.common.net import Net
-import xml.dom.minidom
-import xbmcaddon,xbmcplugin,xbmcgui
-import base64
-import xbmc
+# -*- coding: utf-8 -*-
+'''
+        HK Kan Beta
+        by panglangjang
 
-def __init__(self):
-    self.playlist=sys.modules["__main__"].playlist
+        Streaming Chinese Programming off azdrama.net
+        
+        GPLv3
+
+'''
+from t0mm0.common.net import Net
+import urllib,urllib2,re,xbmcplugin,xbmcgui
+
+__home__    =   None
+__category__=   1
+__show__    =   2
+
+#def __init__(self):
+
 def HOME():
         #addDir('Search','http://www.khmeravenue.com/',4,'http://yeuphim.net/images/logo.png')
-        addDir('Recent Updates','http://azdrama.net/recently-updated/',2,'')
+        addDir('新的东西','http://azdrama.net/recently-updated',__category__,'')
         #addDir('English Subtitles','http://azdrama.net/english/&sort=date',7,'')
-        addDir('HK Dramas','http://azdrama.net/hk-drama/',2,'')
-        addDir('HK Shows','http://azdrama.net/hk-show/',2,'')
-        addDir('Korean Dramas','http://azdrama.net/korean-drama/',2,'')
-        #addDir('Mainland Chinese Dramas','http://azdrama.net/chinese-drama/',2,'')
+        addDir('电视剧','http://azdrama.net/hk-drama',__category__,'')
+        addDir('综艺','http://azdrama.net/hk-show',__category__,'')
+        addDir('韩国 电视剧','http://azdrama.net/korean-drama',__category__,'')
+        #addDir('Mainland Chinese Dramas','http://azdrama.net/chinese-drama/',__category__,'')
         #addDir('Taiwanese Dramas','http://azdrama.net/taiwanese-drama/',2,'')
 
 def INDEX(url):
@@ -27,18 +34,16 @@ def INDEX(url):
         listcontent=re.compile('<div class="content">(.+?)<div id="r">').findall(newlink)
         match=re.compile('<img [^>]*src=["\']?([^>^"^\']+)["\']?[^>]*></a><h1 class="normal"><a href="(.+?)" title="(.+?)">(.+?)</a><span class="download">').findall(listcontent[0])
         for (vimg,vurl,vname,vtmp) in match:
-            #print vimg
-            #print vurl
-            #print vname
-            #print vtmp
-            vimg = vimg.encode('utf-8')
-            vurl = vurl.encode('utf-8')        
-            #vname = vname.encode('utf-8')
-            #vtmp = vtmp.encode('utf-8')
+            vurl = vurl +'list-episode/'
+            print vurl
             try:
-                  addDir(vname,vurl+"list-episode/",5,vimg)
+                  addDir(vname,vurl,__show__,vimg)
             except:
-                  addDir(vname.decode("utf-8"),vurl+"list-episode/",5,vimg)
+                  #if the addDir fails, its probably because some args need to be encoded to utf-8, because they contain chinese characters.
+                  vimg = vimg.encode('utf-8')
+                  vurl = vurl.encode('utf-8')
+                  vname = vname.encode('utf-8')
+                  addDir(vname,vurl,__show__,vimg)
         pagecontent=re.compile('<div class="wp-pagenavi" align=center>(.+?)</div>').findall(newlink)
         if(len(pagecontent)>0):
                 match5=re.compile('<a href="(.+?)" class="(.+?)" title="(.+?)">(.+?)</a>').findall(pagecontent[0])
@@ -53,169 +58,109 @@ def INDEX(url):
                     #in other words, this plugins menu can be written alot better.
                     vname = vname.replace('&laquo;','<<')
                     vname = vname.replace('&raquo;','>>')
-                    addDir(vname,vurl,2,"")
+                    addDir(vname,vurl,__category__,"")
     #except: pass
 
 
-def SEARCH():
-    try:
-        keyb = xbmc.Keyboard('', 'Enter search text')
-        keyb.doModal()
-        #searchText = '01'
-        if (keyb.isConfirmed()):
-                searchText = urllib.quote_plus(keyb.getText())
-        url = 'http://yeuphim.net/movie-list.php?str='+ searchText
-        INDEX(url)
-    except: pass
-
-def SearchResults(url):
-        link = GetContent(url)
-        newlink = ''.join(link.splitlines()).replace('\t','')
-        match=re.compile('<aclass="widget-title" href="(.+?)"><imgsrc="(.+?)" alt="(.+?)"').findall(newlink)
-        if(len(match) >= 1):
-                for vLink,vpic,vLinkName in match:
-                    addDir(vLinkName,vLink,5,vpic)
-        match=re.compile('<strong>&raquo;</strong>').findall(link)
-        if(len(match) >= 1):
-            startlen=re.compile("<strongclass='on'>(.+?)</strong>").findall(newlink)
-            url=url.replace("/page/"+startlen[0]+"/","/page/"+ str(int(startlen[0])+1)+"/")
-            addDir("Next >>",url,6,"")
-
-def Mirrors(url,name):
-    try:
-        if(CheckRedirect(url)):
-                MirrorsThe(name,url)
-        else:
-                link = GetContent(url)
-                newlink = ''.join(link.splitlines()).replace('\t','')
-                match=re.compile('<b>Episode list </b>(.+?)</table>').findall(newlink)
-                mirrors=re.compile('<div style="margin: 10px 0px 5px 0px">(.+?)</div>').findall(match[0])
-                if(len(mirrors) >= 1):
-                        for vLinkName in mirrors:
-                            addDir(vLinkName.encode("utf-8"),url,5,'')
-
-    except: pass
-	
-def Parts(url,name):
-        link = GetContent(url)
-        link = ''.join(link.splitlines()).replace('\'','"')
-        partlist=re.compile('<li>VIP #1:(.+?)by:').findall(link)
-        partctr=0
-        if(len(partlist)>0):
-               partlink=re.compile('<a href="(.+?)">').findall(partlist[0])
-               if(len(partlink) > 1):
-                       for vlink in partlink:
-                              partctr=partctr+1
-                              addDir(name + " Part " + str(partctr),vlink,3,"")
-        return partctr
-		
-def CheckParts(url,name):
-	if(Parts(url,name) < 2):
-		loadVideos(url,name)
-def Episodes(url,name,newmode):
-    #try:
-        link = GetContent(url)
-        newlink = ''.join(link.splitlines()).replace('\t','')
-        listcontent=re.compile('<ul class="listep">(.+?)</ul>').findall(newlink)
-        if(newmode==5):
-                vidmode=11
-        else:
-                vidmode=9
-        match=re.compile('<li><a href="(.+?)" title="(.+?)">').findall(listcontent[0])
-        for (vurl,vname) in match:
-            try:
-                  addDir(vname,vurl,vidmode,"")
-            except:
-                  addDir(vname.decode("utf-8"),vurl,vidmode,"")
-        pagecontent=re.compile('<div class="wp-pagenavi" align=center>(.+?)</div>').findall(newlink)
-        if(len(pagecontent)>0):
-                match5=re.compile('<a href="(.+?)" class="(.+?)" title="(.+?)">(.+?)</a>').findall(pagecontent[0])
-                for vurl,vtmp,vname,vtmp2 in match5:
-                    addDir("page: " + vname,vurl,newmode,"")
-
-    #except: pass
-
-def GetEpisodeFromVideo(url,name):
-        link = GetContent(url)
-        newlink = ''.join(link.splitlines()).replace('\t','')
-        listcontent=re.compile('<center><a href="(.+?)"><font style="(.+?)">(.+?)</font></a></center>').findall(newlink)
-        Episodes(listcontent[0][0]+"list-episode/",name,5)
-
-def Geturl(strToken):
-        for i in range(20):
-                try:
-                        strToken=strToken.decode('base-64')
-                except:
-                        return strToken
-                if strToken.find("http") != -1:
-                        return strToken
-
-	   
 def GetContent(url):
     try:
        net = Net()
-       second_response = net.http_GET(url)
-       return second_response.content
+       response = net.http_GET(url)
+       return response.content
     except:
        d = xbmcgui.Dialog()
-       d.ok(url,"Can't Connect to site",'Try again in a moment')
+       d.ok(url,"不能得到的东西",'请再试一次')
+	
+def Episodes(url,name,newmode):
+    link = GetContent(url)
+    newlink = ''.join(link.splitlines()).replace('\t','')
+    listcontent=re.compile('<ul class="listep">(.+?)</ul>').findall(newlink)
 
-def playVideo(videoType,videoId):
-    url = ""
-    print videoType + '=' + videoId
-    if (videoType == "youtube"):
-        url = 'plugin://plugin.video.youtube?path=/root/video&action=play_video&videoid=' + videoId.replace('?','')
-        xbmc.executebuiltin("xbmc.PlayMedia("+url+")")
-    elif (videoType == "vimeo"):
-        url = 'plugin://plugin.video.vimeo/?action=play_video&videoID=' + videoId
-    elif (videoType == "tudou"):
-        url = 'plugin://plugin.video.tudou/?mode=3&url=' + videoId
-    else:
-        xbmcPlayer = xbmc.Player()
-        xbmcPlayer.play(videoId)
+    match=re.compile('<li><a href="(.+?)" title="[^"]+ (?:Episode [0]*([\d]+)|([\d]{4}-[\d]{2}-[\d]{2}))">').findall(listcontent[0])
 
-def loadVideos(url,name):
-           link=GetContent(url)
-           newlink = ''.join(link.splitlines()).replace('\t','')
-           match=re.compile('<div id="player" align="center"><iframe [^>]*src=["\']?([^>^"^\']+)["\']?[^>]*>').findall(newlink)
-           if(len(match) > 0):
-                   framecontent = GetContent(match[0])
-                   qualityval = ["240","360p(MP4)","360p(FLV)","480p","720p","HTML5"]
-                   qctr=0
-                   embedlink=re.compile('<embed [^>]*src=["\']?([^>^"^\']+)["\']?[^>]*>').findall(framecontent)
-                   for vname in embedlink:
-                         vlink=re.compile('file=(.+?)\&').findall(vname)
-                         if(len(vlink) > 0):
-                             addLink(qualityval[qctr],urllib.unquote(vlink[0]),8,"","")
-                         qctr=qctr+1
-           else:
-                   match=re.compile('<li>VIP #1: <a href="(.+?)">').findall(newlink)
-                   if(len(match) > 0):
-                           loadVideos(match[0],name)
-                   else:  
-                           d = xbmcgui.Dialog()
-                           d.ok('Not Implemented','Sorry this video site is ',' not implemented yet')
+    is_mirror = len(match[0][1])==0 & len(match[0][2])==0
+    #listlink = re.compile('<a href="([^\"]+?)">Watch all episodes</a>').findall(newlink)
+    #listcontent=[]
 
-def addLink(name,url,mode,iconimage,mirrorname):
-        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name.encode('utf-8'))+"&mirrorname="+urllib.quote_plus(mirrorname)
+    if(is_mirror): #must be mirrored parts
+        print "Processing Mirrored Episodes:"
+        #must be a mirrored link. eagerly load the parts:
+        link = GetContent(match[0][0]) #href
+        newlink = ''.join(link.splitlines()).replace('\t','')
+        listcontent = re.compile('<ul class="listew">(.+?)</ul>').findall(newlink)
+
+        #rebuild match for next loop
+        #default order is acsending
+        match=re.compile('<a href="(.+?)"><font [^>]*><b>[^0-9]*([0-9]+?)[^<]*</b></font></a>').findall(listcontent[0])        
+
+    else: #must be all hosted
+        print "Processing Hosted Episodes: "
+        #print listlink
+        #request full episodes list:
+
+        #scrap through all pages if paginated
+        last_page= re.compile('<a href="'+url+'page-([\d]+)\.html" class="last"').findall(newlink)
+        if(len(last_page)>0):
+            last_page_num = int(last_page[0])
+            print "Scraping through " + last_page[0] + " Pages!"
+
+            #this will be a long operation!
+            page_num = 2
+            while(page_num <= last_page_num):
+                print "Scraping Page: "+str(page_num)
+                link = GetContent(url+'page-'+str(page_num)+'.html') #we're gonna go through each page to get the whole list!
+                newlink = ''.join(link.splitlines()).replace('\t','')
+                listcontent=re.compile('<ul class="listep">(.+?)</ul>').findall(newlink)
+
+                #appending all new matchs to original list!
+                match+=re.compile('<li><a href="(.+?)" title="[^"]+ (?:Episode [0]*([\d]+)|([\d]{4}-[\d]{2}-[\d]{2}))">').findall(listcontent[0])
+
+                page_num+=1
+        
+        
+        
+        match.reverse() #default order is descending
+
+    print "Listing Episodes"
+    #print match    
+    for (idx, data) in enumerate(match):
+        #print data[0]
+        #print data[1]
+        #print data[2]
+        order = data[1] if data[1] else data[2] #episode number or date
+        
+        episode_link=GetContent(data[0]) # data[0] is the href tag
+        episode_newlink = ''.join(episode_link.splitlines()).replace('\t','')
+        episode_match=re.compile('<div id="player" align="center"><iframe [^>]*src=["\']?([^>^"^\']+)["\']?[^>]*>').findall(episode_newlink)
+
+        if(len(episode_match) > 0):
+            #print episode_match[0]
+            framecontent = GetContent(episode_match[0])
+
+            embedlink=re.compile('function player_(?:normal_mp4|best)\(\) {jQuery\("#videoplayer"\).html\("<embed [^>]*src=["\']?([^>^"^\']+)["\']?[^>]*>').findall(framecontent)
+            #print embedlink
+            if(len(embedlink) > 0):
+                embedlink.reverse() #put "best" before "normal_mp4", if there is no best, there should just be normal_mp4    
+                vname = embedlink[0] #select the first quality, should be "best" defaulting to "normal_mp4"
+                #print vname
+                vlink=re.compile('file=(.+?)\&').findall(vname)
+
+                #finally, add the direct link to each episode
+                print "Adding Link:" + name + str(order)
+                #print "Caching link"
+                #should append to array of all cached links, so it can be loaded later without so much scraping"
+                addLink(name + " - 第" + str(order),urllib.unquote(vlink[0]),'')
+
+
+def addLink(name,url,iconimage):
         ok=True
         liz=xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
         liz.setInfo( type="Video", infoLabels={ "Title": name } )
-        contextMenuItems = []
-        liz.addContextMenuItems(contextMenuItems, replaceItems=True)
-        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz)
-        return ok
-
-def addNext(formvar,url,mode,iconimage):
-        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&formvar="+str(formvar)+"&name="+urllib.quote_plus('Next >')
-        ok=True
-        liz=xbmcgui.ListItem('Next >', iconImage="DefaultVideo.png", thumbnailImage=iconimage)
-        liz.setInfo( type="Video", infoLabels={ "Title": 'Next >' } )
-        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
+        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=liz)
         return ok
 
 def addDir(name,url,mode,iconimage):
-        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name.encode('utf-8'))
+        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)
         ok=True
         liz=xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
         liz.setInfo( type="Video", infoLabels={ "Title": name } )
@@ -246,8 +191,6 @@ params=get_params()
 url=None
 name=None
 mode=None
-formvar=None
-mirrorname=None
 try:
         url=urllib.unquote_plus(params["url"])
 except:
@@ -260,35 +203,14 @@ try:
         mode=int(params["mode"])
 except:
         pass
-try:
-        mirrorname=urllib.unquote_plus(params["mirrorname"])
-except:
-        pass
 
 sysarg=str(sys.argv[1])
 print "mode is:" + str(mode)
-if mode==None or url==None or len(url)<1:
-
+if mode==__home__ or url==None or len(url)<1:
         HOME()
-elif mode==2:
+elif mode==__category__:
         INDEX(url)
-elif mode==3:
-        loadVideos(url,mirrorname)
-elif mode==4:
-        SEARCH()
-elif mode==5:
-       Episodes(url,name,mode)
-elif mode==6:
-       SearchResults(url)
-elif mode==7:
-       Episodes(url,name,mode)
-elif mode==8:
-        playVideo("direct",url)
-elif mode==9:
-       GetEpisodeFromVideo(url,name)
-elif mode==10:
-       Episodes2(url,name)
-elif mode==11:
-       CheckParts(url,name)
+elif mode==__show__:
+        Episodes(url,name,mode)
 
 xbmcplugin.endOfDirectory(int(sysarg))

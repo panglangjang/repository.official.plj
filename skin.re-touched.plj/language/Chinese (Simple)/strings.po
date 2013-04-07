@@ -319,3 +319,7 @@ msgstr "扩展功能快捷方式"
 msgctxt "#31552"
 msgid "Set Add-on to use for subtitles"
 msgstr "设置字幕扩展功能"
+
+msgctxt "#31911"
+msgid "Streams"
+msgstr "互联网流"

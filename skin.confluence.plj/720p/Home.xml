@@ -887,7 +887,7 @@
 				<content>
 					<item id="7">
 						<label>8</label>
-						<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+						<onclick>ActivateWindow(Weather)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>

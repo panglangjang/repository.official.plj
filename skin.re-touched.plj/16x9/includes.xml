@@ -837,6 +837,15 @@
 		</control>
 	</include>
 	<include name="HomeMainMenuItems">
+		<item id="7">
+			<label>31911</label>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.plj,return)</onclick>
+			<onclick>ClearProperty(Videos,plugin://plugin.video.plj)</onclick>
+			<icon>special://addons/repository.official.plj/icon-transparent.png</icon>
+			<thumb>-</thumb>
+			<visible>True</visible>
+		</item>
+
 		<item id="1">
 			<label>3</label>
 			<onclick condition="StringCompare(Window(Home).Property(VideosDirectLink),True)">ActivateWindow(Videos)</onclick>
