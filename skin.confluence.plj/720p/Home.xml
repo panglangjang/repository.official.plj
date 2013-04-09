@@ -922,7 +922,7 @@
 						<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Library.HasContent(Movies)</visible>
 					</item>
 					<item id="11">
-						<label>31000</label>
+						<label>20343</label>
 						<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
