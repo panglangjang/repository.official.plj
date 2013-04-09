@@ -2,7 +2,7 @@
 <addons>
 <addon
   id="plugin.video.hkkan"
-  version="1.5.0"
+  version="1.5.1"
   name="HK Kan Beta"
   provider-name="CeeToe">
   <requires>
@@ -23,7 +23,7 @@
 
 <addon id="plugin.video.kankan"
     name="迅雷看看(KanKan)"
-    version="1.0.1"
+    version="1.0.2"
     provider-name="Taxigps">
     <extension
         point="xbmc.python.pluginsource"
@@ -67,7 +67,7 @@
 
 <addon id="plugin.video.ppstream"
     name="PPS网络电视(PPStream)"
-    version="2.2.3"
+    version="2.2.4"
     provider-name="cmeng (originator:robinttt)">
     <extension
         point="xbmc.python.pluginsource"
@@ -107,7 +107,7 @@
 
 <addon id="plugin.video.yinyuetai"
     name="音悦台MV(YinYueTai)"
-    version="1.6.0"
+    version="1.6.1"
     provider-name="cmeng (originator: Skyemperor">
     <extension
         point="xbmc.python.pluginsource"

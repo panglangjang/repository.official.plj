@@ -1059,3 +1059,8 @@ ctl = {
       }
 exec(ctl[mode][0])
 
+viewmode = "50" if (mode==None) else "500"            
+
+xbmc.executebuiltin("Container.SetViewMode("+viewmode+")")
+
+

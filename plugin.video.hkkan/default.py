@@ -10,7 +10,7 @@
 '''
 from bs4 import BeautifulSoup
 from t0mm0.common.net import Net
-import urllib,urllib2,re,xbmcplugin,xbmcgui
+import urllib,urllib2,re,xbmcplugin,xbmcgui,xbmc
 
 __category__    =   None
 __shows__       =   1
@@ -242,10 +242,15 @@ except:
 sysarg=str(sys.argv[1])
 print "mode is:" + str(mode)
 if mode==__category__ or url==None or len(url)<1:
-        CATEGORIES()
+    CATEGORIES()
+    xbmc.executebuiltin("Container.SetViewMode(50)")
+
 elif mode==__shows__:
-        SHOWS(url,page)
+    SHOWS(url,page)    
+    xbmc.executebuiltin("Container.SetViewMode(500)")
+    
 elif mode==__episodes__:
-        EPISODES(url,name,page)
+    EPISODES(url,name,page)
+    xbmc.executebuiltin("Container.SetViewMode(50)")
 
 xbmcplugin.endOfDirectory(int(sysarg))

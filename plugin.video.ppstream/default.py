@@ -1125,53 +1125,56 @@ except:
 
 if mode == None:
     mainMenu()
-elif mode == 1:
-    progListMovie(name, id, page, cat, area, year, order, listpage)
-elif mode == 2:
-    getMovie(name, url, thumb)
-elif mode == 3:
-    progListSeries(name, url, thumb, page)
-elif mode == 4:
-    updateListMovie(name, id, page, cat, area, year, order, listpage)
-elif mode == 6:
-    updateListSeries(name, url, thumb, listpage)
-elif mode == 10:
-    PlayVideo(name, url)
-    
-elif mode == 11:
-    progListUgc(name, id, page, cat, year, order)
-elif mode == 12:
-    updateListUgc(name, id, cat, year, order) 
-elif mode == 14:
-    playVideoUgc(name, url, thumb)    
-elif mode == 15:
-    playVideoUgcX(name, url, thumb)    
-    
-elif mode == 21:
-    getInfo(name, id, thumb)
+    xbmc.executebuiltin("Container.SetViewMode(50)")
+else:
+    if mode == 1:
+        progListMovie(name, id, page, cat, area, year, order, listpage)
+    if mode == 2:
+        getMovie(name, url, thumb)
+    if mode == 3:
+        progListSeries(name, url, thumb, page)
+    if mode == 4:
+        updateListMovie(name, id, page, cat, area, year, order, listpage)
+    if mode == 6:
+        updateListSeries(name, url, thumb, listpage)
+    if mode == 10:
+        PlayVideo(name, url)
+        
+    if mode == 11:
+        progListUgc(name, id, page, cat, year, order)
+    if mode == 12:
+        updateListUgc(name, id, cat, year, order) 
+    if mode == 14:
+        playVideoUgc(name, url, thumb)    
+    if mode == 15:
+        playVideoUgcX(name, url, thumb)    
+        
+    if mode == 21:
+        getInfo(name, id, thumb)
 
-elif mode == 31:
-    searchPPS()
-elif mode == 32:
-    ppsSearchList(name, url, page)
-elif mode == 33:
-    episodeList(name,url)
+    if mode == 31:
+        searchPPS()
+    if mode == 32:
+        ppsSearchList(name, url, page)
+    if mode == 33:
+        episodeList(name,url)
 
-elif mode == 42:
-    PlayVideoSmgbb(name,url)
-elif mode == 43:
-    PlayVideoYouku(name,url)
-elif mode == 44:
-    PlayVideoTudou(name,url)
-elif mode == 45:
-    PlayVideoQiyi(name,url)
-elif mode == 46:
-    PlayVideoSohu(name,url)
-elif mode == 47:
-    PlayVideoSina(name,url)
-elif mode == 48:
-    PlayVideoLetv(name,url)
+    if mode == 42:
+        PlayVideoSmgbb(name,url)
+    if mode == 43:
+        PlayVideoYouku(name,url)
+    if mode == 44:
+        PlayVideoTudou(name,url)
+    if mode == 45:
+        PlayVideoQiyi(name,url)
+    if mode == 46:
+        PlayVideoSohu(name,url)
+    if mode == 47:
+        PlayVideoSina(name,url)
+    if mode == 48:
+        PlayVideoLetv(name,url)
 
-elif mode == 99:
-    searchUndefined(name, url)
+    if mode == 99:
+        searchUndefined(name, url)
        
+    xbmc.executebuiltin("Container.SetViewMode(500)")

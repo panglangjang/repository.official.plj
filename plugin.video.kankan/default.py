@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import xbmc, xbmcgui, xbmcplugin, xbmcaddon, urllib2, urllib, re, string, sys, os, gzip, StringIO
 
 # Plugin constants 
@@ -348,10 +348,13 @@ except:
 
 if mode == None:
     rootList()
+    xbmc.executebuiltin("Container.SetViewMode(50)")
 elif mode == 1:
     progList(name,type,genre,area,year,order,page)
+    xbmc.executebuiltin("Container.SetViewMode(500)")
 elif mode == 2:
     seriesList(name,url,thumb,res)
+    xbmc.executebuiltin("Container.SetViewMode(50)")
 elif mode == 4:
     performChanges(name,type,genre,area,year,order,page)
 elif mode == 10:
