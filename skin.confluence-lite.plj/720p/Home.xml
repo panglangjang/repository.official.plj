@@ -914,7 +914,7 @@
 						<icon>-</icon>
 						<thumb>-</thumb>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
-					</item-->
+					</item>
 					<item id="2">
 						<label>3</label>
 						<onclick condition="StringCompare(Window.Property(VideosDirectLink),True)">ActivateWindow(Videos)</onclick>
@@ -923,7 +923,6 @@
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 					</item>
-					<!--
 					<item id="10">
 						<label>20342</label>
 						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
