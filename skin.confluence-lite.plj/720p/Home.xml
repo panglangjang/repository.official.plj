@@ -731,62 +731,20 @@
 				<posy>70</posy>
 				<onup>9000</onup>
 				<ondown>9002</ondown>
-				<control type="grouplist" id="9010">
+				<control type="grouplist" id="9018">
 					<include>HomeSubMenuCommonValues</include>
-					<onleft>9010</onleft>
-					<onright>9010</onright>
-					<visible>Container(9000).HasFocus(2)</visible>
-					<include>HomeSubMenuVideos</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9016">
+					<onleft>9018</onleft>
+					<onright>9018</onright>
+					<visible>Container(9000).HasFocus(9)</visible>
+					<include>HomeSubMenuStreams</include> <!-- Buttons for the grouplist -->
+				</control>				
+				<control type="grouplist" id="9019">
 					<include>HomeSubMenuCommonValues</include>
-					<onleft>9016</onleft>
-					<onright>9016</onright>
-					<visible>Container(9000).HasFocus(10)</visible>
-					<include>HomeSubMenuMovies</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9017">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9017</onleft>
-					<onright>9017</onright>
-					<visible>Container(9000).HasFocus(11)</visible>
-					<include>HomeSubMenuTVShows</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9011">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9011</onleft>
-					<onright>9011</onright>
-					<visible>Container(9000).HasFocus(3)</visible>
-					<include>HomeSubMenuMusic</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9012">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9012</onleft>
-					<onright>9012</onright>
-					<visible>Container(9000).HasFocus(5)</visible>
-					<include>HomeSubMenuSystem</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9013">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(6)</visible>
-					<include>HomeSubMenuPlayDisc</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9014">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9014</onleft>
-					<onright>9014</onright>
-					<visible>Container(9000).HasFocus(12)</visible>
-					<include>HomeSubMenuLiveTV</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9015">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(4)</visible>
-					<include>HomeSubMenuPictures</include> <!-- Buttons for the grouplist -->
-				</control>
+					<onleft>9019</onleft>
+					<onright>9019</onright>
+					<visible>Container(9000).HasFocus(7)</visible>
+					<include>HomeSubMenuWeather</include> <!-- Buttons for the grouplist -->
+				</control>	
 			</control>
 			<control type="image">
 				<posx>-100</posx>
@@ -903,10 +861,9 @@
 					-->
 					<item id="9">
 						<label>31911</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.plj,return)</onclick>
+						<onclick>ActivateWindow(Video,plugin://plugin.video.plj/,return)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
-						<visible>True</visible>
 					</item>					
 					<!--item id="12">
 						<label>31502</label>
@@ -923,6 +880,7 @@
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 					</item>
+					<!--
 					<item id="10">
 						<label>20342</label>
 						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
