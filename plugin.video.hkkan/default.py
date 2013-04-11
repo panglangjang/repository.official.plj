@@ -97,14 +97,18 @@ def EPISODES(url,name,page=1):
     soup = BeautifulSoup(html)
 
 
-    content = soup.find("div","content")
+    content = soup.find("ul","listep")
     #link = GetContent(Paginate(url,page))
     #newlink = ''.join(link.splitlines()).replace('\t','')
     #listcontent=re.compile('<ul class="listep">(.+?)</ul>').findall(newlink)
 
     match=re.compile('<li><a href="(.+?)" title="[^"]+ (?:Episode [0]*([\d]+)|([\d]{4}-[\d]{2}-[\d]{2}))">').findall(str(content))
-
-    is_mirror = len(match[0][1])==0 & len(match[0][2])==0
+    is_mirror = (len(match[0][1])==0) & (len(match[0][2])==0)
+    
+    #print match[0][1]
+    #print match[0][2]
+    #print (len(match[0][1])==0) & (len(match[0][2])==0)
+    
     #listlink = re.compile('<a href="([^\"]+?)">Watch all episodes</a>').findall(newlink)
     #listcontent=[]
 
