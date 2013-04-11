@@ -120,7 +120,7 @@
 						<label2>31400</label2>
 						<onclick>ActivateWindow(AppearanceSettings)</onclick>
 						<icon>-</icon>
-					</item>
+					</item><!--
 					<item id="2">
 						<label>157</label>
 						<label2>31401</label2>
@@ -144,13 +144,13 @@
 						<label2>31403</label2>
 						<onclick>ActivateWindow(PicturesSettings)</onclick>
 						<icon>-</icon>
-					</item>
+					</item>-->
 					<item id="6">
 						<label>8</label>
 						<label2>31404</label2>
 						<onclick>ActivateWindow(WeatherSettings)</onclick>
 						<icon>-</icon>
-					</item>
+					</item><!--
 					<item id="7">
 						<label>24001</label>
 						<label2>31408</label2>
@@ -162,7 +162,7 @@
 						<label2>31410</label2>
 						<onclick>ActivateWindow(ServiceSettings)</onclick>
 						<icon>-</icon>
-					</item>
+					</item>-->
 					<item id="9">
 						<label>13000</label>
 						<label2>31406</label2>
