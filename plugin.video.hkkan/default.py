@@ -3,7 +3,7 @@
         HK Kan Beta
         by panglangjang
 
-        Streaming Chinese Programming off azdrama.net
+        Streaming Chinese Programming off azdrama.sx
         
         GPLv3
 
@@ -22,13 +22,13 @@ def Paginate(url,page):
     return url + "/page-" + str(page) + ".html"
 
 def CATEGORIES():
-    addDir('新的东西','http://azdrama.net/recently-updated',__shows__,'')
-    addDir('电视剧','http://azdrama.net/hk-drama',__shows__,'')
-    addDir('综艺','http://azdrama.net/hk-show',__shows__,'')
-    addDir('韩国 电视剧','http://azdrama.net/korean-drama',__shows__,'')
-    #addDir('Mainland Chinese Dramas','http://azdrama.net/chinese-drama/',__shows__,'')
-    #addDir('Taiwanese Dramas','http://azdrama.net/taiwanese-drama/',2,'')
-    #addDir('English Subtitles','http://azdrama.net/english/&sort=date',7,'')
+    addDir('新的东西','http://azdrama.sx/recently-updated',__shows__,'')
+    addDir('电视剧','http://azdrama.sx/hk-drama',__shows__,'')
+    addDir('综艺','http://azdrama.sx/hk-show',__shows__,'')
+    addDir('韩国 电视剧','http://azdrama.sx/korean-drama',__shows__,'')
+    #addDir('Mainland Chinese Dramas','http://azdrama.sx/chinese-drama/',__shows__,'')
+    #addDir('Taiwanese Dramas','http://azdrama.sx/taiwanese-drama/',2,'')
+    #addDir('English Subtitles','http://azdrama.sx/english/&sort=date',7,'')
     #addDir('Search','http://www.khmeravenue.com/',4,'http://yeuphim.net/images/logo.png')
 
 
